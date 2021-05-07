@@ -18,6 +18,15 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use('/',(req, res, next)=>{
+        console.log('comman middleware');
+        const data = {
+            message: "API's are working",
+            status: 200
+        }
+        res.json(data);
+    })
+
 app.use('/project',projectRoutes);
 app.use('/auth',authRoutes);
 
